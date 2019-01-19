@@ -3,20 +3,21 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="myapp.homepage"
+
+	<definition name="myapp.common"
 		template="/WEB-INF/layouts/classic.jsp">
-		<put-attribute name="title"
-			value="Tiles tutorial homepage" />
 		<put-attribute name="header"
 			value="/WEB-INF/tiles/header.jsp" />
 		<put-attribute name="menu"
 			value="/WEB-INF/tiles/menu.jsp" />
-		<put-attribute name="body"
-			value="myapp.home.body" />
 		<put-attribute name="footer"
 			value="/WEB-INF/tiles/footer.jsp" />
 	</definition>
 
+	<definition name="myapp.homepage" extends="myapp.common">
+		<put-attribute name="title" value="Tiles tutorial homepage" />
+		<put-attribute name="body" value="myapp.home.body" />
+	</definition>
 
 	<definition name="myapp.home.body"
 		template="/WEB-INF/layouts/three_rows.jsp">
@@ -26,5 +27,10 @@
 			value="/WEB-INF/tiles/topics.jsp" />
 		<put-attribute name="three"
 			value="/WEB-INF/tiles/comments.jsp" />
+	</definition>
+
+	<definition name="myapp.inheritence_demo" extends="myapp.common">
+		<put-attribute name="title" value="Definition Inheritence demo"/>
+		<put-attribute name="body" value="/WEB-INF/tiles/inhertence_demo_body.jsp"/>
 	</definition>
 </tiles-definitions>
