@@ -7,10 +7,24 @@
 		template="/WEB-INF/layouts/classic.jsp">
 		<put-attribute name="title"
 			value="Tiles tutorial homepage" />
-		<put-attribute name="header" value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="header"
+			value="/WEB-INF/tiles/header.jsp" />
 		<put-attribute name="menu"
 			value="/WEB-INF/tiles/menu.jsp" />
-		<put-attribute name="body" value="/WEB-INF/tiles/home.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp" />
+		<put-attribute name="body"
+			value="myapp.home.body" />
+		<put-attribute name="footer"
+			value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+
+
+	<definition name="myapp.home.body"
+		template="/WEB-INF/layouts/three_rows.jsp">
+		<put-attribute name="one"
+			value="/WEB-INF/tiles/headlines.jsp" />
+		<put-attribute name="two"
+			value="/WEB-INF/tiles/topics.jsp" />
+		<put-attribute name="three"
+			value="/WEB-INF/tiles/comments.jsp" />
 	</definition>
 </tiles-definitions>
